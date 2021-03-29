@@ -1,10 +1,21 @@
-import React from 'react';
+import React, { Component } from 'react';
 import './App.css';
+import routes from './routes'
+import Nav from './Components/Nav/Nav'
+import { render } from '@testing-library/react';
 
-function App() {
+class App extends Component {
+  render(){
+
   return (
-    <div className='App'></div>
-  )
-};
+
+        <div className="App">
+          <Nav />
+          {routes}
+        </div>
+
+    );
+  }
+}
 
 export default App;

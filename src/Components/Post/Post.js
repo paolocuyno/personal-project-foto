@@ -6,19 +6,20 @@ import './Post.css';
 class Post extends Component {
   constructor(props) {
     super(props);
-
+    
     this.state = {
       author: '',
       author_pic: '',
       title: '',
       img: '',
       content: '',
-      loading: true
+      loading: true,
+      id:this.props.match.params.id
     }
   }
 
   componentDidMount() {
-    axios.get(`/api/post/1`)
+    axios.get(`/api/post/{id}`)
       .then(res => {
         this.setState({ ...res.data, loading: false })
       })

@@ -38,6 +38,18 @@ module.exports = {
       }
     },
     createPost: (req, res) => {
+     const db=req.app.get('db')
+     let { id } = req.session.user
+     let {title,img,content}=req.body
+     let date= new Date 
+
+     dbInstance.create_post()
+      .then( () => res.sendStatus(200) )
+      .catch( err => {
+        res.status(500).send({errorMessage: "Oops! Something went wrong. Our engineers have been informed!"});
+        console.log(err)
+      })
+
       //code here
     },
     readPost: (req, res) => {
@@ -45,7 +57,13 @@ module.exports = {
         .then(post => post[0] ? res.status(200).send(post[0]) : res.status(200).send({}))
     },
     deletePost: (req, res) => {
-      req.app.get('db').post.delete_post(req.params.id)
-        .then(_ => res.sendStatus(200))
+      const dbInstance = req.app.get('db');
+
+    dbInstance.delete_post()
+      .then( () => res.sendStatus(200) )
+      .catch( err => {
+        res.status(500).send({errorMessage: "Oops! Something went wrong. Our engineers have been informed!"});
+        console.log(err)
+    })
     }
   }

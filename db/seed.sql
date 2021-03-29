@@ -12,6 +12,6 @@ CREATE TABLE helo_posts(
     title varchar(45) not null,
     content text,
     img text,
-    author_id integer,
+    author_id integer REFERENCES helo_users(id) ,
     date_created timestamp
 )

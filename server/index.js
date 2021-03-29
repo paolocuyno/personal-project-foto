@@ -4,18 +4,20 @@ const express = require('express')
       postCtrl = require('./controllers/posts')
 const session = require('express-session')
 
-const { PORT, CONNECTION_STRING, SESSION_SECRET } = process.env;
+
+
+const { SERVER_PORT, CONNECTION_STRING, SESSION_SECRET } = process.env;
 const massive=require ('massive')
 const app = express();
 
 app.use(express.json());
 
 app.use(session({
-    secret: SESSION_SECRET,
     resave: false,
     saveUninitialized: true,
+    secret: SESSION_SECRET,
     cookie: {
-        maxAge: 1000 
+        maxAge: 1000  *60*60*24
     }
 }))
 
@@ -33,13 +35,14 @@ app.delete('/api/post/:id', postCtrl.deletePost)
 
 massive({
     connectionString: CONNECTION_STRING,
-    ssl: {rejectUnauthorized: false}
+    ssl: {
+        rejectUnauthorized: false}
 })
 
 
 
 .then(dbInstance => {
     app.set('db', dbInstance);
-    app.listen(PORT, () => console.log(`DB up & Server running on ${PORT}`));
+    app.listen(SERVER_PORT, () => console.log(`DB up & Server running on ${SERVER_PORT}`));
 })
 .catch(err => console.log(err));
