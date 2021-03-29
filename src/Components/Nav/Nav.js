@@ -23,7 +23,7 @@ class Nav extends Component {
 
   getUser() {
     axios.get('/api/auth/me')
-    .then(res => 'replace this string with something useful')
+    .then(res => updateUser(res.data))
   }
   
   logout() {
