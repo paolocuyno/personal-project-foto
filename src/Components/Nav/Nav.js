@@ -36,7 +36,7 @@ class Nav extends Component {
         <div className='nav'>
           <div className='nav-profile-container'>
             <div className='nav-profile-pic'></div>
-            <p>placeholder username</p>
+            <p>user</p>
           </div>
           <div className='nav-links'>
             <Link to="/dash"> <img className='nav-img' src={homeLogo} alt='home' /></Link>
@@ -46,5 +46,5 @@ class Nav extends Component {
         </div>
   }
 }
-const mapStateToProps = state => state
+const mapStateToProps = (state) => state
 export default withRouter(connect(mapStateToProps,{updateUser,logout})(Nav));

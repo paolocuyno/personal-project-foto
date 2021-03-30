@@ -29,7 +29,7 @@ class Post extends Component {
     let imgSrc = this.state.img ? this.state.img : noImage;
 
     return (
-      <div className='post content-box'>
+      <div className='post-content-box'>
         {!this.state.loading && this.state.title
           ?
           <div>
@@ -41,7 +41,7 @@ class Post extends Component {
               </div>
             </div>
             <div className='post-content-box'>
-              <img className='post-img' src={imgSrc} alt='post' />
+              <img className='post-img' src='https://robohash.org/paolo.png' alt='post' />
               <p>{this.state.content}</p>
             </div>
           </div>

@@ -1,4 +1,3 @@
-import axios from 'axios';
 
 const initialState={
     username:'',
@@ -8,28 +7,29 @@ const initialState={
 const UPDATE_USER='UPDATE_USER'
 const LOGOUT_USER='LOGOUT_USER'
 
-export function updateUser(usernameStr){
+export function updateUser(user){
     return{
         type:UPDATE_USER,
-        payload:usernameStr
+        payload:user
     }
 }
 
-export function logout(state = initialState, action) {
-    switch(action.type) {
-       
-        case LOGOUT_USER:
-            return initialState;
-        default: return state;
+export function logout() {
+return{ 
+    type:LOGOUT_USER
     }
 }
+
 export default function reducer(state=initialState, action){
     switch(action.type){
         case UPDATE_USER:
             return{
                 ...state,
-                username: action.payload, 
+                username: action.payload.username, 
+                profile_pic: action.payload.profile_pic
             }
+        case LOGOUT_USER:
+            return initialState
         default: return state
     }
 }
