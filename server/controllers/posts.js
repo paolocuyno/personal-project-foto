@@ -38,20 +38,26 @@ module.exports = {
       }
     },
     createPost: (req, res) => {
-     const db=req.app.get('db')
-     let { id } = req.session.user
+     const db=  req.app.get('db')
+     let { id } = req.session.user;
      let {title,img,content}=req.body
      let date= new Date 
 
-     dbInstance.create_post()
+     if(id){
+
+     db.post.create_post([id,title,img,content,date])
       .then( () => res.sendStatus(200) )
-      .catch( err => {
+     } else{
+     ( err => {
         res.status(500).send({errorMessage: "Oops! Something went wrong. Our engineers have been informed!"});
         console.log(err)
       })
+     
 
+      }
+    }
       //code here
-    },
+    ,
     readPost: (req, res) => {
       req.app.get('db').post.read_post(req.params.id)
         .then(post => post[0] ? res.status(200).send(post[0]) : res.status(200).send({}))
