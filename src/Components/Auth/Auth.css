@@ -1,23 +1,27 @@
 .auth {
     width: 100vw;
-    height: 100vh;
-    background-image: linear-gradient(99deg, #ff70a6, #ff9770 40%, #ffd670 73%, #e9ff70);
+
+    background-image: linear-gradient(97deg,  #464646,#020000);
     position: absolute;
     top: 0;
     left: 0;
     display: flex;
-    justify-content: center;
+    justify-content: flex-end;
     align-items: center;
     color: white;
-    @media only screen and (max-width: 400px)
+    
+    @media only screen and (max-width: 400px);
   }
   
+  .register{
+    cursor: pointer;
+  }
   .auth-container {
     border-radius: 8px;
     box-shadow: 0 0 25px rgba(0, 0, 0, 0.35);
-    background-image: linear-gradient(97deg, #ff7a6e, #Ffd670);
-    width: 35vw;
-    height: 55vh;
+    background-image: linear-gradient(97deg, #181717, #807f7f);
+    width: 40%;
+    height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -26,7 +30,26 @@
     position: relative;
     
   }
-
+  .learn-more{
+   position: absolute;
+  top: 70%;
+  left: 30%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  background-color: rgba(255, 166, 0, 0.479);
+  color: rgb(255, 255, 255);
+  font-size: 16px;
+  font-weight: bold;
+  padding: 12px 24px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  z-index: 5;
+  }
+  hover.learn-more{
+background-color: rgb(233, 82, 36);
+}
+  
   .auth-title {
     font-size: 80px;
     font-weight: 700;
@@ -72,13 +95,28 @@
     display: flex;
     justify-content: space-around;
     width: 55%;
+    cursor: pointer;
   }
+img{
+  opacity: 0.4;
+  width:60vw;
+}
 
-  @media only screen and (max-width: 600px) {
+  @media only screen and (max-width: 760px) {
    .auth-container {
      width: 100%;
+     font-size:smaller;
      padding:0px;
      height:100vh;
-     background-image: linear-gradient(99deg, #ff70a6, #ff9770 40%, #ffd670 73%, #e9ff70);
+     background-image: linear-gradient(97deg, #181717, #807f7f);
     }
+    .learn-more{
+   display:none;
+    }
+    .img-container{display:none;
+    }
+  }
+
+  .dark-button{
+    cursor: pointer;
   }

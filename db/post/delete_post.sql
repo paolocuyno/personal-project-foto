@@ -1,2 +1,2 @@
-DELETE from helo_posts
+DELETE from foto_posts
 WHERE p.id=$1

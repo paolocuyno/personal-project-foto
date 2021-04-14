@@ -1,45 +1,78 @@
 .form {
-    width: 70%;
-    margin: 0 auto;
-    font-size: 16px;
-    font-weight: 700;
-  }
+  width: 60%;
+  margin: 0 auto;
+  font-size: 16px;
+  font-weight: 700;
+  border-radius: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+}
+.form-main {
+  display: flex;
+  width: 60%;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  border: black solid;
+  background-color: white;
+  margin-bottom: 20px;
+}
+.form-img-prev {
+  width: 200px;
+  height: 200px;
+}
 
-  .form-main {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  .form-img-prev {
-    max-width: 95%;
-    height: 300px;
-    border: 1px solid lightgray;
-    margin-top: 20px;
-  }
-  
-  .form-input-box {
-    width: 90%;
-    height: 50px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    margin: 20px auto;
-  }
-  
-  .form-text-box {
-    width: 90%;
-    margin: 3px auto 10px;
-  }
+.form-input-box {
+  width: 60%;
+  height: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  margin: 20px auto;
+}
 
-  .form-text-box > p {
-    margin: 0 0 7px;
-  }
+.form-text-box {
+  width: 60%;
+  margin: 3px auto 10px;
+}
 
-  textarea {
-    min-width: 100%;
-    max-width: 100%;
-    min-height: 100px;
-    font-family: 'Open Sans','Courier New', Courier, monospace;
-    font-size: 12px;
-  }
+.form-text-box > p {
+  margin: 0 0 7px;
+}
+
+textarea {
+  min-width: 100%;
+  max-width: 100%;
+  min-height: 100px;
+  font-family: "Open Sans", "Courier New", Courier, monospace;
+  font-size: 12px;
+}
+
+.title {
+  text-align: center;
+  color: red;
+  text-decoration: blanchedalmond;
+  background-color: white;
+  border-radius: 10px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.form-content-box {
+  width:75%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color:black;
+}
+#form-button {
+  width: 50%;
+  text-align: center;
+  border-radius: 30px;
+  font-size: 20px;
+  color: red;
+  background-color: white;
+}

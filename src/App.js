@@ -2,6 +2,12 @@ import React, { Component } from 'react';
 import './App.css';
 import routes from './routes'
 import Nav from './Components/Nav/Nav'
+import Header from './Components/Header/Header'
+// import { library } from '@fortawesome/fontawesome-svg-core'
+// import { fab } from '@fortawesome/free-brands-svg-icons'
+// import { faCheckSquare, faCoffee } from '@fortawesome/free-solid-svg-icons'
+
+// library.add(fab, faCheckSquare, faCoffee)
 
 
 class App extends Component {
@@ -10,7 +16,8 @@ class App extends Component {
   return (
 
         <div className="App">
-          <Nav />
+          <Header/>
+          {/* <Nav /> */}
           {routes}
         </div>
 

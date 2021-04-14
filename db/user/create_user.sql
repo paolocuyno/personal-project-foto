@@ -1,4 +1,4 @@
-INSERT into helo_users
+INSERT into foto_users
 
 (username,password,profile_pic)
 VALUES ($1, $2 ,$3)

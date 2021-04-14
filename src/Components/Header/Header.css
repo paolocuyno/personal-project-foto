@@ -1,0 +1,31 @@
+header {
+  display: flex;
+  flex-direction: row;
+
+  
+  color: white;
+  height: 10vh;
+ 
+  border-bottom: white;
+  border-width: 10px;
+}
+
+li{
+    display:inline-flex;
+   margin-right: 220px;
+   flex-direction: row;
+   flex-wrap: nowrap;
+   font-size: 25px;
+}
+
+
+.logo{
+    height: 85px;
+    width:120px;
+    z-index: 10;
+    
+}
+
+img{
+    opacity: 2;
+}
