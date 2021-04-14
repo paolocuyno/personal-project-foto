@@ -1,2 +1,2 @@
 DELETE from foto_posts
-WHERE p.id=$1
+WHERE id=$1;
