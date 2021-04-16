@@ -1,0 +1,139 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700');
+.App {
+  padding: 20px 20px 20px 100px;
+  font-family: 'Open Sans', 'Courier New', Courier, monospace;
+  background-color:black;
+  min-width: 100%;
+  min-height: 100vh;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.dark-button {
+  border-radius: 1px;
+  background-image: radial-gradient(circle at 50% -46%, #737373, #403d39);
+  padding: 10px 20px;
+  color: white;
+  border: none;
+}
+
+.content-box {
+  border-radius: 2px;
+  background-color: white;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.2);
+  padding: 20px;
+}
+
+.title {
+  font-size: 40px;
+  font-weight: 700;
+  color: #ff9770;
+  margin: 0 0 10px;
+}
+
+.author-box {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  width: 30%;
+}
+
+.author-box > img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+  margin: 0 5px;
+}
+
+@keyframes rotating {
+  from{
+    transform: rotate(0deg);
+  }
+  to{
+    transform: rotate(360deg);
+  }
+}
+
+.load-box {
+  margin: 500px auto;
+  background-color: orange;
+  width: 100px;
+  height:50px;
+  position: relative;
+  animation: load 3s linear infinite;
+
+}
+.load-background {
+  border: orange;
+  background-color: white;
+  width: 200px;
+  height: 50px;
+}
+.load {
+
+  
+  width: 200px;
+  height: 200px;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+@keyframes load {
+  0% {
+      width: 0%;
+  }
+
+  87.5% {
+      width: 100%;
+  }
+}
+
+@keyframes turn {
+  0% {
+      transform: rotateY(0deg);
+  }
+
+  6.25%,
+  50% {
+      transform: rotateY(180deg);
+  }
+
+  56.25%,
+  100% {
+      transform: rotateY(360deg);
+  }
+}
+
+@keyframes bounce {
+
+  0%,
+  100% {
+      top: 10px;
+  }
+
+  12.5% {
+      top: 30px;
+  }
+}
+
+
+
+
+
+
+
+
+
+@import "./auth";
+@import "./dash";
+@import "./form";
+@import './post';

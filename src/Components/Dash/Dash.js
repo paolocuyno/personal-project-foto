@@ -86,8 +86,8 @@ class Dash extends Component {
             </button>
           ) : (
             <div className="author-box">
-              <p>by {post.author_username}</p>
-              <img src={post.profile_pic} alt="author" />
+              <p> @{post.author_username}</p>
+              {/* <img src={post.profile_pic} alt="author" /> */}
             </div>
           )}
         </div>

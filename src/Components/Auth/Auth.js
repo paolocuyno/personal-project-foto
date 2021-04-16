@@ -22,7 +22,7 @@ class Auth extends Component {
 // const [username,setUsername]=useState('');
 // const [password,setPassword]=useState('');
 // const [errorMsg,setErrorMsg]=useState('')
-
+// const [prop,setProp]=useState('val')
 
 
 
@@ -51,6 +51,20 @@ class Auth extends Component {
       });
   }
 
+  // function login() {
+  //   axios
+  //     .post("/api/auth/login", this.state)
+  //     .then((res) => {
+        
+  //       props.updateUser(res.data);
+  //       props.history.push("/dash");
+  //     })
+  //     .catch((err) => {
+  //       console.log(err);
+  //       setErrorMsg({ errorMsg: "Incorrect username or password!" });
+  //     });
+  // }
+
   register() {
     axios
       .post("/api/auth/register", this.state)
@@ -65,6 +79,22 @@ class Auth extends Component {
       });
   }
 
+  //function register() {
+  //   axios
+  //     .post("/api/auth/register", this.state)
+  //     .then((res) => {
+        
+  //       props.updateUser(res.data);
+  //       props.history.push("/dash");
+  //     })
+  //     .catch((err) => {
+  //       console.log(err);
+  //       setErrorMsg({ errorMsg: "Username taken!" });
+  //     });
+  // }
+
+
+
   closeErrorMessage = () => {
     this.setState({
       errorMsg: false,
@@ -72,6 +102,14 @@ class Auth extends Component {
       password: "",
     });
   };
+
+//  function closeErrorMessage = () => {
+//     React.useState({
+//       errorMsg: false,
+//       username: "",
+//       password: "",
+//     });
+//   };
 
   render() {
     return (
