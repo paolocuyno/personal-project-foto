@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
+// import '../src/Components/Styles/app.scss'
 import routes from './routes'
 import Nav from './Components/Nav/Nav'
 import Header from './Components/Header/Header'

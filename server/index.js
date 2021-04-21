@@ -4,9 +4,10 @@ const express = require('express')
       postCtrl = require('./controllers/posts')
 const session = require('express-session')
 const massive=require ('massive')
+const ctrl= require('./controllers/controller')
 
 
-const { SERVER_PORT, CONNECTION_STRING, SESSION_SECRET } = process.env;
+const { SERVER_PORT, CONNECTION_STRING, SESSION_SECRET,USERNAME,PASSWORD } = process.env;
 
 const app = express();
 
@@ -17,7 +18,7 @@ app.use(session({
     saveUninitialized: false,
     secret: SESSION_SECRET,
     cookie: {
-        maxAge: 1000  *60*60*24
+        maxAge: 100000  *60*60*24
     }
 }))
 
@@ -32,6 +33,8 @@ app.get('/api/posts', postCtrl.readPosts);
 app.post('/api/post', postCtrl.createPost);
 app.get('/api/post/:id', postCtrl.readPost);
 app.delete('/api/post/:id', postCtrl.deletePost)
+
+app.post('/api/email',ctrl.email)
 
 massive({
     connectionString: CONNECTION_STRING,

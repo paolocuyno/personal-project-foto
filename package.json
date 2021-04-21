@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "main": "index.js",
-  "proxy": "http://localhost:4001",
+  "proxy": "http://localhost:4001/",
   "nodemonConfig": {
     "ext": "sql,js",
     "ignore": [
@@ -24,6 +24,8 @@
     "express": "^4.17.1",
     "express-session": "^1.17.1",
     "massive": "^6.7.1",
+    "node-sass": "^5.0.0",
+    "nodemailer": "^6.5.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-redux": "^7.2.3",

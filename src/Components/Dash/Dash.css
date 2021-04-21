@@ -1,6 +1,5 @@
 .dash {
-    width: 80%;
-    
+  width: 80%;
 }
 
 .dash-filter {
@@ -31,45 +30,46 @@
   width: 15%;
   display: flex;
   justify-content: space-around;
+  border-radius: 1rem;
   align-items: center;
 }
 
-.author-box{
+.author-box {
   text-align: left;
-  margin-right:50px;
+  margin-right: 50px;
 }
-.dash-post-box{
+.dash-post-box {
   display: flex;
   flex-direction: column;
-  background-color:rgb(175, 91, 91);
-  color:white;
-  width:80%;
+  background-color: rgb(175, 91, 91);
+  color: white;
+  width: 100%;
   justify-content: space-between;
   align-items: center;
+  text-align: center;
   margin: 10px 0;
   border: solid #00ffff;
   border-radius: 3rem;
 }
 
-.dash-post-box > h3 {
+/* .dash-post-box > h3 {
   font-size: 30px;
-  width:70%;
+  width: 70%;
   background-color: black;
   color: #ffffff;
+} */
+
+.dashpic {
+  width: 100%;
 }
 
-.dashpic{
-  width:100%;
-  
-}
-
-.dash-posts-container{
+.dash-posts-container {
   background-color: black;
 }
 
-.delete{
+button {
   background-color: #00ffff;
-  color:White;
-  width:30%;
-  height:20px;
+  color: rgb(255, 19, 19);
+  width: 100px;
+  height: 30px;
 }

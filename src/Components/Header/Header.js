@@ -38,6 +38,7 @@ class Nav extends Component {
             <li><Link to="/dash"> <img className='logo' src={fotologo}/> </Link></li>
             <li><Link to="/about"> About </Link></li>
             <li><Link to="/form"> New Post+ </Link></li>
+            <li><Link to= "/contact-us">Invite A Friend!</Link></li>
            <li><Link to="/" onclick="logout()">  Login/Logout</Link></li> 
           </div>
         </header>

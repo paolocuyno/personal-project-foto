@@ -13,9 +13,11 @@ class Post extends Component {
       title: '',
       img: '',
       content: '',
-      loading: true
+      loading: true,
+      
     }
   }
+
 
   componentDidMount() {
     axios.get(`/api/post/${this.props.match.params.id}`)
@@ -35,13 +37,14 @@ class Post extends Component {
             <div className='post-header'>
               <h2 className='title'>{this.state.title}</h2>
               <div className='author-box'>
-                <p>post by {this.state.author}</p>
+                <p>post by @{this.state.author}</p>
                 <img src={this.state.author_pic} alt='author' />
               </div>
             </div>
             <div className='post-content-box'>
               <img className='post-img' src={imgSrc} alt='post' />
               <p>{this.state.content}</p>
+             
             </div>
           </div>
           :

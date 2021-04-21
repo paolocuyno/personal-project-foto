@@ -1,4 +1,4 @@
-import React, { Component, useState } from "react";
+import React, { Component} from "react";
 import axios from "axios";
 import { connect } from "react-redux";
 import "./Dash.css";
@@ -14,19 +14,13 @@ class Dash extends Component {
       oldestFirst: false,
       posts: [],
       loading: true,
-    };
+    }
 
     this.grabPosts = this.grabPosts.bind(this);
     this.reset = this.reset.bind(this);
   }
 
-  // function Dash(props){
-  //   const[search,setSearch]=setState('');
-  //   const [myPosts,setMyPosts]=setState(true);
-  //   const[oldestFirst, setOldestFirst]=setState(false);
-  //   const[posts,setPosts]=setState([]);
-  //   const[loading,setLoading]=setState(true)
-  // }
+
 
   componentDidMount() {
     this.grabPosts();
@@ -80,16 +74,16 @@ class Dash extends Component {
             <h3>{post.title}</h3>
             <img className="dashpic" src={post.img} />
           </Link>
-          {post.author_username === this.props.username ? (
-            <button onClick={(_) => this.deletePost(post.post_id)}>
-              delete your post
-            </button>
-          ) : (
+          {post.author_username === this.props.username ? 
+            (<button  onClick={(_) => this.deletePost(post.post_id)}>
+             DELETE
+            </button>)
+           : ( 
             <div className="author-box">
-              <p> @{post.author_username}</p>
-              {/* <img src={post.profile_pic} alt="author" /> */}
+              <p> {post.author_username}</p>
+             
             </div>
-          )}
+           )}
         </div>
       );
     });
@@ -108,7 +102,7 @@ class Dash extends Component {
               Search
             </button>
             <button onClick={this.reset} className="dark-button">
-              Reset
+              Clear Filter
             </button>
           </div>
           <div className="dash-check-box">
