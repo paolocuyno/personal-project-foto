@@ -21,7 +21,7 @@ module.exports = {
       //invoke the sendMail function with the info in the email
       let info = await transporter.sendMail({
         from: `fotoupdates@yahoo.com`, //This will show up when you go into the email
-        to: 'sharkattack1912@yahoo.com',
+        to: email,
         subject: title, //This will show on the subject of the email
         text: message, //for clients with plaintext support only
         html: `<div>${message}<div> 

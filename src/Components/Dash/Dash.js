@@ -14,6 +14,7 @@ class Dash extends Component {
       oldestFirst: false,
       posts: [],
       loading: true,
+    
     }
 
     this.grabPosts = this.grabPosts.bind(this);
@@ -50,8 +51,9 @@ class Dash extends Component {
   }
 
   deletePost = id => {
-    axios.delete(`/api/post/${id}`).then((_) => this.grabPosts());
+    axios.delete(`/api/post/${id}`).then(_ => this.grabPosts());
   };
+
 
   reset() {
     let { myPosts } = this.state;
@@ -66,12 +68,14 @@ class Dash extends Component {
 
   render() {
     let { loading, search, posts, myPosts, oldestFirst } = this.state;
-
-    let mappedPosts = posts.map((post) => {
+   console.log(this.props)
+    
+    let mappedPosts = posts.map(post => {
+      
       return (
         <div className="content-box dash-post-box" key={post.post_id}>
           <Link to={`/post/${post.post_id}`}>
-            <h3>{post.title}</h3>
+            <h3>{post.title}<Link to={`/update/${post.post_id}`}><button >edit</button></Link></h3>
             <img className="dashpic" src={post.img} />
           </Link>
           {post.author_username === this.props.username ? 

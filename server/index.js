@@ -5,6 +5,7 @@ const express = require('express')
 const session = require('express-session')
 const massive=require ('massive')
 const ctrl= require('./controllers/controller')
+const ctrlr=require('../server/controllers/twilio')
 
 
 const { SERVER_PORT, CONNECTION_STRING, SESSION_SECRET,USERNAME,PASSWORD } = process.env;
@@ -12,6 +13,7 @@ const { SERVER_PORT, CONNECTION_STRING, SESSION_SECRET,USERNAME,PASSWORD } = pro
 const app = express();
 
 app.use(express.json());
+app.post('/api/sendSMS',ctrlr.sendSMS)
 
 app.use(session({
     resave: true,
@@ -33,6 +35,7 @@ app.get('/api/posts', postCtrl.readPosts);
 app.post('/api/post', postCtrl.createPost);
 app.get('/api/post/:id', postCtrl.readPost);
 app.delete('/api/post/:id', postCtrl.deletePost)
+app.put('/api/title',postCtrl.updatePost)
 
 app.post('/api/email',ctrl.email)
 

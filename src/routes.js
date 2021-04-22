@@ -5,6 +5,7 @@ import Form from './Components/Form/Form'
 import Post from './Components/Post/Post'
 import About from './Components/About/About'
 import Contact from './Components/Contact/Contact'
+import Update from './Components/Update'
 import {HashRouter as Switch, Route} from 'react-router-dom'
 
 export default (
@@ -15,6 +16,7 @@ export default (
       <Route path="/form" component={Form} />  
       <Route path="/about" component={About}/>
       <Route path="/contact-us" component={Contact}/>
+      <Route path="/update/:id" component={Update}/>
 
     </Switch>
   )

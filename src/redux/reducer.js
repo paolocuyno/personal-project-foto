@@ -25,8 +25,8 @@ export default function reducer(state=initialState, action){
         case UPDATE_USER:
             return{
                 ...state,
-                username: action.payload.username, 
-                profile_pic: action.payload.profile_pic
+                username: action.payload.user.username, 
+                profile_pic: action.payload.user.profile_pic
             }
         case LOGOUT_USER:
             return initialState

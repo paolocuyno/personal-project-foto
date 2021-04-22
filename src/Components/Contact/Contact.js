@@ -1,5 +1,5 @@
 import React from 'react';
-
+import Twilio from '../Twilio/Twilio'
 import axios from 'axios';
 import styled from 'styled-components'
 
@@ -45,6 +45,7 @@ class App extends React.Component {
         
           <button style={styles.button} onClick={this.handleSend}>Send</button>
         </div>
+        <Twilio/>
       </Body>
     )
   }

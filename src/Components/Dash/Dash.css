@@ -67,9 +67,10 @@
   background-color: black;
 }
 
-button {
+.delete {
   background-color: #00ffff;
   color: rgb(255, 19, 19);
   width: 100px;
   height: 30px;
+  z-index: 4
 }

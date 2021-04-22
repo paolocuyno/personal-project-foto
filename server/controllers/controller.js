@@ -11,17 +11,17 @@ module.exports = {
     try {
       //invoke the createTransport function passing in your email information. 
       let transporter = nodemailer.createTransport({
-        service: 'gmail',
+        service: 'yahoo',
         auth: {
-          user:"fotoappcontact@gmail.com",
-          pass: "Mochi#3032"
+            user:"fotoupdates@yahoo.com",
+            pass: "axsuefqurctyjkko"
         }
       });
 
       //invoke the sendMail function with the info in the email
       let info = await transporter.sendMail({
-        from: `'${name}' <${email}>`, //This will show up when you go into the email
-        to: EMAIL,
+        from: 'fotoupdates@yahoo.com', //This will show up when you go into the email
+        to: `'${name}' <${email}>`,
         subject: title, //This will show on the subject of the email
         text: message, //for clients with plaintext support only
         html: `<div>${message}<div> 
