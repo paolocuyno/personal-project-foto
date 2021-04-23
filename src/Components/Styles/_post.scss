@@ -1,7 +1,7 @@
 .post {
-    width: 70%;
+    width: 80%;
     min-height: 400px;
-    margin: 0 auto;
+   
   }
   
   .post-header{
@@ -19,7 +19,6 @@
   }
   
   .post-content-box {
-    margin: 10px 0 0;
     color:white;
     height:300px;
     background-color: $vibrantgrey;
@@ -40,12 +39,16 @@
   .oops-box {
     padding: 50px;
   }
-  
+ 
   @media only screen and (max-width: 600px) {
     .post-content-box {
       width: 100%;
       padding:0px;
-      height:100vh;
-      background-image: linear-gradient(99deg, #ff70a6, #ff9770 40%, #ffd670 73%, #e9ff70);
+      height:32vh;
+      display: inline-block;  
      }
    }
+  @include for-desktop-up{.post-content-box{
+     
+     width:100%
+ }}
