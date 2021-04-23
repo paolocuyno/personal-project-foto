@@ -6,13 +6,19 @@ const session = require('express-session')
 const massive=require ('massive')
 const ctrl= require('./controllers/controller')
 const ctrlr=require('../server/controllers/twilio')
+const path=require('path')
 
 
 const { SERVER_PORT, CONNECTION_STRING, SESSION_SECRET,USERNAME,PASSWORD } = process.env;
 
 const app = express();
+app.use(express.static(__dirname + '/../build'))
+app.get('*',(req,res)=>{
+    res.sendFile(path.join(__dirname ,'../build/index.html'))
+})
 
 app.use(express.json());
+
 app.post('/api/sendSMS',ctrlr.sendSMS)
 
 app.use(session({
@@ -24,13 +30,13 @@ app.use(session({
     }
 }))
 
-//Auth Endpoints
+
 app.post('/api/auth/register', userCtrl.register);
 app.post('/api/auth/login', userCtrl.login);
 app.get('/api/auth/me', userCtrl.getUser);
 app.post('/api/auth/logout', userCtrl.logout);
 
-//Post Endpoints
+
 app.get('/api/posts', postCtrl.readPosts);
 app.post('/api/post', postCtrl.createPost);
 app.get('/api/post/:id', postCtrl.readPost);
