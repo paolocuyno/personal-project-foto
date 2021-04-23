@@ -1,0 +1,94 @@
+.dash {
+    
+    width: 90%;
+    background-image: url('../../assets/Layer-0.png');
+   h3{
+       color: white;
+       font-weight:bold;
+       text-decoration: none;
+     
+    
+    }}
+    .button{width:250px;
+    
+    &:hover{
+    background-color: red;
+    }
+
+  }
+  
+  .dash-filter {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-left: 15px;
+    background-color: $vibrantgrey;
+    color: white;
+    border:solid $teal 2px;
+    border-radius: 3rem;
+    width: auto;
+  }
+  
+  .dash-search-box {
+    display: flex;
+    justify-content: space-between;
+    border-radius: 2rem;
+    align-items: center;
+    width: 100%;
+  }
+  
+  .dash-search-bar {
+    height: 25px;
+    border-radius: 2rem;
+    width: 65%;
+  }
+  
+  .dash-check-box {
+    width: 15%;
+    display: flex;
+    justify-content: space-around;
+    border-radius: 1rem;
+    align-items: center;
+  }
+  
+  .author-box {
+    text-align: left;
+    margin-right: 350px;
+  }
+  .dash-post-box {
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(92, 88, 88, 0.658);
+    color: white;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    margin: 10px 0;
+    border: solid #00ffff;
+    border-radius: 3rem;
+  }
+  
+  /* .dash-post-box > h3 {
+    font-size: 30px;
+    width: 70%;
+    background-color: black;
+    color: #ffffff;
+  } */
+  
+  .dashpic {
+    width: 100%;
+  }
+  
+  .dash-posts-container {
+    background-color:transparent;
+  }
+  
+  .delete {
+    background-color: #00ffff;
+    color: rgb(255, 19, 19);
+    width: 100px;
+    height: 30px;
+    z-index: 4;
+  }
+  

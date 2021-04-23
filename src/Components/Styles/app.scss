@@ -10,43 +10,11 @@
   flex-direction: column;
   align-items: center;
 }
+$teal:#00ffff;
+$red:#ca1f1f79 ;
+$grey:rgba(66, 57, 57, 0.438);
+$vibrantgrey:rgba(92, 88, 88, 0.719);
 
-.dark-button {
-  border-radius: 1px;
-  background-image: radial-gradient(circle at 50% -46%, #737373, #403d39);
-  padding: 10px 20px;
-  color: white;
-  border: none;
-}
-
-.content-box {
-  border-radius: 2px;
-  background-color: white;
-  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.2);
-  padding: 20px;
-}
-
-.title {
-  font-size: 40px;
-  font-weight: 700;
-  color: #ff9770;
-  margin: 0 0 10px;
-}
-
-.author-box {
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  width: 30%;
-}
-
-.author-box > img {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
-  margin: 0 5px;
-}
 
 @keyframes rotating {
   from{
@@ -59,7 +27,7 @@
 
 .load-box {
   margin: 500px auto;
-  background-color: orange;
+  background-color: $teal;
   width: 100px;
   height:50px;
   position: relative;
@@ -67,7 +35,37 @@
 
 }
 .load-background {
-  border: orange;
+  border: $red;
+  background-color: white;
+  width: 200px;
+  height: 50px;
+}
+.load {
+
+  
+  width: 200px;
+  height: 200px;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+
+
+
+
+
+.load-box {
+  margin: 500px auto;
+  background-color: $teal;
+  width: 100px;
+  height:50px;
+  position: relative;
+  animation: load 3s linear infinite;
+
+}
+.load-background {
+  border:$red;
   background-color: white;
   width: 200px;
   height: 50px;
@@ -97,43 +95,25 @@ a {
   }
 }
 
-@keyframes turn {
-  0% {
-      transform: rotateY(0deg);
-  }
-
-  6.25%,
-  50% {
-      transform: rotateY(180deg);
-  }
-
-  56.25%,
-  100% {
-      transform: rotateY(360deg);
-  }
+@mixin for-phone-only {
+  @media (max-width: 599px) { @content; }
 }
-
-@keyframes bounce {
-
-  0%,
-  100% {
-      top: 10px;
-  }
-
-  12.5% {
-      top: 30px;
-  }
+@mixin for-tablet-portrait-up {
+  @media (min-width: 600px) { @content; }
 }
-
-
-
-
-
-
-
-
+@mixin for-tablet-landscape-up {
+  @media (min-width: 900px) { @content; }
+}
+@mixin for-desktop-up {
+  @media (min-width: 1200px) { @content; }
+}
+@mixin for-big-desktop-up {
+  @media (min-width: 1800px) { @content; }
+}
 
 @import "./auth";
 @import "./dash";
 @import "./form";
 @import './post';
+@import './header';
+@import './update';

@@ -1,33 +1,33 @@
 import React, { useState } from 'react';
-import './Twilio.css';
+
 import axios from 'axios'
 
 export default function Twilio() {
   let [name, setName] = useState('')
-  let [message, setMessage] = useState('')
+  let [number, setNumber] = useState('')
 
   async function send() {
-    let res = axios.post('/api/sendSMS', { name, message })
-    await alert(`${name}, thank you for contacting Kevin`)
+    let res = axios.post('/api/sendSMS', { name, number })
+    await alert(`Thank you for inviting ${name} to visit our site!`)
     setName('')
-    setMessage('')
+    setNumber('')
   }
 
   return (
     <div style={styles.body}>
       <div style={styles.form}>
-        <h1>Text a friend to invite them to Foto</h1>
+        <h1>Text a friend to invite them to Foto!</h1>
         <input 
-          style={styles.nameInput} 
+          style={styles.input} 
           onChange={(e) => setName(e.target.value)} 
           type='text'
-          placeholder='Name...'
+          placeholder='Name'
            />
-        <textarea 
-          style={styles.message} 
-          onChange={(e) => setMessage(e.target.value)}
-          placeholder='Message...'
-          ></textarea>
+        <input 
+          style={styles.input} 
+          onChange={(e) => setNumber(e.target.value)}
+          placeholder='Number'
+          ></input>
         <button 
           style={styles.button} 
           onClick={() => send()}>Send</button>
@@ -40,47 +40,47 @@ export default function Twilio() {
 
 const styles = {
   body: {
-    background: 'blue',
-    height: '100vh',
-    overflow: 'hidden',
+    color:'white',
+    height:200,
     display:'flex',
-    alignItems:'center',
-    justifyContent:'center'
+   alignItems:'center',
+    justifyContent:'center',
+    borderRadius:'2rem' ,
+    width:300
   },
   form: {
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'center',
-    justifyContent: 'space-evenly',
-    height: 500,
-    background: 'lightgrey',
-    width: 450,
-    boxShadow:'2px 1px 3px 1px black'
+    display:'flex',
+    flexDirection:'column',
+    background:'#00000090',
+    width:500,
+    alignItems:'center',
+    height:200,
+ 
+    borderRadius:10
   },
-  nameInput: {
-    height: 40,
-    fontSize: 35,
-    width: 350,
-    border: '1px solid black',
-    outline: 'none'
+  input:{
+    width:450,
+    height:40,
+    fontSize:35,
+    outline:'none'
   },
+
   message: {
-    minWidth: 350,
+    minWidth: 150,
     maxWidth: 350,
-    minHeight: 300,
-    maxHeight: 300,
+    minHeight: 100,
+    maxHeight: 100,
     border: '1px solid black',
     fontSize: 35,
     outline: 'none'
   },
-  button: {
-    height: 45,
-    width: 200,
-    background: 'black',
-    borderRadius: 10,
-    color: 'white',
-    fontSize: 25,
-    textAlign: 'center',
-    outline: 'none'
+  button:{
+    width:200,
+    height:45,
+    borderRadius:10,
+    background:'teal',
+    fontSize:35,
+    fontWeight:'bold',
+    letterSpacing:'0.07em'
   }
 }

@@ -14,6 +14,7 @@ function Update(props) {
     
     return (
         <div>
+            <h3>Update Photo Category</h3>
             <input onChange={(e)=>setTitle(e.target.value)}/>
             <button onClick={()=>submitClick()}>Submit</button>
         </div>

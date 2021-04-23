@@ -1,7 +1,7 @@
 import React, { Component} from "react";
 import axios from "axios";
 import { connect } from "react-redux";
-import "./Dash.css";
+
 import { Link } from "react-router-dom";
 
 class Dash extends Component {
@@ -75,19 +75,19 @@ class Dash extends Component {
       return (
         <div className="content-box dash-post-box" key={post.post_id}>
           <Link to={`/post/${post.post_id}`}>
-            <h3>{post.title}<Link to={`/update/${post.post_id}`}><button >edit</button></Link></h3>
+            <h3>{post.title}<Link to={`/update/${post.post_id}`}><br></br><button >Edit Category</button></Link></h3>
             <img className="dashpic" src={post.img} />
           </Link>
-          {post.author_username === this.props.username ? 
-            (<button  onClick={(_) => this.deletePost(post.post_id)}>
+          {/* {post.author_username === this.props.username ?  */}
+            <button  onClick={(_) => this.deletePost(post.post_id)}>
              DELETE
-            </button>)
-           : ( 
-            <div className="author-box">
-              <p> {post.author_username}</p>
+            </button>
+           
+            {/* <div className="author-box"> */}
+              <p className='author-handle'> {post.author_username}</p>
              
-            </div>
-           )}
+            {/* </div> */}
+           
         </div>
       );
     });
@@ -102,14 +102,14 @@ class Dash extends Component {
               className="dash-search-bar"
               placeholder="Search by Category"
             />
-            <button onClick={this.grabPosts} className="dark-button">
+            <button onClick={this.grabPosts} className="button">
               Search
             </button>
-            <button onClick={this.reset} className="dark-button">
+            <button onClick={this.reset} className="button">
               Clear Filter
             </button>
           </div>
-          <div className="dash-check-box">
+          {/* <div className="dash-check-box">
             <p>Show My Posts</p>
             <input
               checked={myPosts}
@@ -128,7 +128,7 @@ class Dash extends Component {
               }
               type="checkbox"
             />
-          </div>
+          </div> */}
         </div>
         <div className="content-box dash-posts-container">
           {!loading ? (

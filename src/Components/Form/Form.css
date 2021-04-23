@@ -30,13 +30,15 @@
   height: 50px;
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
   margin: 20px auto;
+
 }
 
 .form-text-box {
   width: 60%;
   margin: 3px auto 10px;
+  border:solid;
+  border-radius: 2rem;
 }
 
 .form-text-box > p {

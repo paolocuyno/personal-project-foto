@@ -3,7 +3,7 @@ import Twilio from '../Twilio/Twilio'
 import axios from 'axios';
 import styled from 'styled-components'
 
-class App extends React.Component {
+class Contact extends React.Component {
   constructor() {
     super()
     this.state = {
@@ -29,13 +29,14 @@ class App extends React.Component {
         message: '',
         
       })
+      alert(`Thanks for inviting ${name} to visit our site!`)
     })
   }
 
   render() {
     const { name, email, message, title,image } = this.state
     return (
-      <Body>
+      <body>
         <div style={styles.form}>
           <h3 style={styles.header}>Email Sender</h3>
           <input style={styles.input} placeholder='Subject' type="text" name='title' value={title} onChange={this.handleInput} />
@@ -46,37 +47,38 @@ class App extends React.Component {
           <button style={styles.button} onClick={this.handleSend}>Send</button>
         </div>
         <Twilio/>
-      </Body>
+      </body>
     )
   }
 }
 
-export default App;
+export default Contact;
 
-const Body= styled.body`
-  background-color:white;
-    height:50vh;
-    display:flex;
-   align-items:center;
-   text-align:center;
-    justify-content:center;
-    margin-top:20px;
-    border-radius:2rem
-`;
 
 
 
 const styles = {
 
+  body:{
+    background:'white',
+    height:'100vh',
+    width:'100%',
+    display:'inline-flex',
+    flexDirection:'row',
+   alignItems:'center',
+    justifyContent:'center',
+    borderRadius:'2rem' 
+  },
+
   form:{
     display:'flex',
     flexDirection:'column',
     background:'#00000090',
-    width:500,
+    width:300,
     alignItems:'center',
-    height:500,
+    height:400,
     justifyContent:'space-evenly',
-    borderRadius:10
+   
   },
   header:{
     fontSize:40,
@@ -87,7 +89,7 @@ const styles = {
   },
   input:{
     width:450,
-    height:50,
+    height:40,
     fontSize:35,
     outline:'none'
   },

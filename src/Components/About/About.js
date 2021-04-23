@@ -1,13 +1,24 @@
 import React from "react";
 import './About.css'
+import about from '../../assets/about.jpg'
 
 const About = () => {
   return (
     <div className="about">
-      <div className="img">IMAGE HERE</div>
+      <h2>About Us</h2>
+      <div className="img"><img src={about} alt='about image'/></div>
       <p>
-          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Natus id alias eveniet, tenetur quisquam eum! Explicabo nemo doloremque architecto quisquam, repellendus animi. Ipsa consectetur veniam nemo! Dicta doloribus laboriosam voluptatem neque vel deserunt fugiat exercitationem qui eaque? Reprehenderit, aliquid? Maxime ipsa soluta voluptatem reprehenderit nam vero iusto consequuntur facilis iste officia? Aliquid perspiciatis, recusandae explicabo possimus, vel eaque numquam vero dolorum porro, aperiam distinctio suscipit. Consequatur eius at quam tenetur! Nostrum facilis sapiente magnam nesciunt animi voluptatem, cum culpa eos sint magni deleniti. Labore, deleniti eaque fuga sunt obcaecati commodi corrupti, earum corporis, placeat itaque asperiores. Saepe provident ut fugiat.
+        FOTO is a photo sharing site that was created for the purpose of photographers sharing their images that they have proudly shot and edited while also being a source of inspiration for staging shots, learning new techniques as well as finding some great locations to shoot visually stunning photos. 
       </p>
+      <p>
+        The platform was created to build a community of photographers who can come together with the common of interest of being the best photographer they can be. 
+      </p>
+
+      <p>In a world where social media is often inundated with unwanted ads, FOTO sets itself apart by being the go-to platform for both aspiring and professional photographers alike to form friendships through the connection of their mutual interest of photography.  </p>
+
+      <p>With the 'Category' feature, community members will be able to find images that are most relevant to the category that they are most interested in seeing on their feed while also allowing users to edit the category of each image should they feel that it would fit another category better. </p>
+
+
     </div>
   );
 };

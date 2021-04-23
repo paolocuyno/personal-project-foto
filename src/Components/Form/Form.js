@@ -2,8 +2,7 @@ import React, { useState } from "react";
 import {useHistory} from "react-router";
 import axios from "axios";
 import noImage from "./../../assets/no-image-.png";
-import "./Form.css";
-import styled from "styled-components";
+
 
 export default function Form(){
     const [title,setTitle]=useState('');
@@ -44,6 +43,7 @@ export default function Form(){
         <div className="form-input-box">
           <p>Category:</p>
           <input
+            className='input'
             value={title}
             onChange={handlerTitle}
           />
@@ -52,6 +52,7 @@ export default function Form(){
         <div className="form-input-box">
           <p>Image URL:</p>
           <input
+          className='input'
             value={img}
             onChange={handlerImg}
           />
@@ -59,6 +60,7 @@ export default function Form(){
         <div className="form-text-box">
           <p>Caption</p>
           <textarea
+          className='input'
             value={content}
             onChange={handlerContent}
           />

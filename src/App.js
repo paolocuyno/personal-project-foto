@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import './App.css';
-// import "./Components/Styles/app.scss";
+// import './App.css';
+import "./Components/Styles/app.scss";
 import routes from "./routes";
 import Nav from "./Components/Nav/Nav";
 import Header from "./Components/Header/Header";

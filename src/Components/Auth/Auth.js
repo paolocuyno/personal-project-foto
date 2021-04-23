@@ -1,9 +1,8 @@
 import React, { useState } from "react";
 import {useHistory} from "react-router"
 import axios from "axios";
-import home from "../../assets/home.jpg";
-import oculus from "../../assets/oculus.jpg";
-import "./Auth.css";
+
+// import "./Auth.css";
 import { connect } from "react-redux";
 import { updateUser } from "../../redux/reducer";
 import fotologo from "./../../assets/foto-logo.png";
@@ -65,12 +64,12 @@ const login=()=>{
 }
   return (
     <div className="auth">
-      <div className="img-container">
-        <button className="learn-more">Learn More</button> by user paoloac
-        <img src={oculus} />{" "}
+      <div className="home-text">
+         Created <span>By</span> Photographers<br></br>
+       <span>For</span> Photographers
       </div>
       <div className="auth-container">
-        <h1 className="auth-title">foto</h1>
+        <img src={fotologo} className='main-logo' alt='logo'/>
         {errorMsg && (
           <h3 className="auth-error-msg">
             {errorMsg}{" "}

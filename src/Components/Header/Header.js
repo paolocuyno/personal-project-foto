@@ -1,13 +1,12 @@
 import React, { Component } from "react";
 import axios from "axios";
-import homeLogo from "./../../assets/home_logo.png";
-import newLogo from "./../../assets/new_logo.png";
-import logoutLogo from "./../../assets/shut_down.png";
-import fotologo from "./../../assets/foto-logo.png"
-import "./Header.css";
+import fotologo from "./../../assets/Asset3.png"
 import { Link, withRouter } from "react-router-dom";
 import { connect } from "react-redux";
 import { updateUser, logout } from "../../redux/reducer";
+import{FontAwesomeIcon} from "@fortawesome/react-fontawesome"
+import {faQuestionCircle,faPlusCircle,faShareSquare,faSignInAlt}  from "@fortawesome/free-solid-svg-icons"
+
 
 class Nav extends Component {
   constructor(props) {
@@ -33,13 +32,12 @@ class Nav extends Component {
     return (
       this.props.location.pathname !== "/" && (
         <header>
-          
           <div className="header-links">
             <li><Link to="/dash"> <img className='logo' src={fotologo}/> </Link></li>
-            <li><Link to="/about"> About </Link></li>
-            <li><Link to="/form"> New Post+ </Link></li>
-            <li><Link to= "/contact-us">Invite A Friend!</Link></li>
-           <li><Link to="/" onclick="logout()">  Login/Logout</Link></li> 
+            <li><Link to="/about" ><p className='header-text'>About </p> <FontAwesomeIcon className='icon' icon={faQuestionCircle}/> </Link></li>
+            <li><Link to="/form" > <p className='header-text'>New Post </p><FontAwesomeIcon className='icon'  icon={faPlusCircle}/></Link></li>
+            <li><Link to= "/contact-us" ><p className='header-text'>Invite A Friend! </p><FontAwesomeIcon className='icon'  icon={faShareSquare}/></Link></li>
+           <li><Link to="/" onclick="logout()" >  <p className='header-text'>Login/Logout</p>  <FontAwesomeIcon className='icon'  icon={faSignInAlt}/></Link></li> 
           </div>
         </header>
       )
@@ -47,6 +45,9 @@ class Nav extends Component {
   }
 }
 const mapStateToProps = (state) => state;
+
+
+
 export default withRouter(
   connect(mapStateToProps, { updateUser, logout })(Nav)
 );
