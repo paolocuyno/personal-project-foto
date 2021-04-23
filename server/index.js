@@ -12,9 +12,9 @@ const path=require('path')
 const { SERVER_PORT, CONNECTION_STRING, SESSION_SECRET,USERNAME,PASSWORD } = process.env;
 
 const app = express();
-app.use(express.static(__dirname + '/../build'))
+app.use(express.static(__dirname+'/../build'))
 app.get('*',(req,res)=>{
-    res.sendFile(path.join(__dirname ,'../build/index.html'))
+    res.sendFile(path.join(__dirname,'../build/index.html'))
 })
 
 app.use(express.json());
