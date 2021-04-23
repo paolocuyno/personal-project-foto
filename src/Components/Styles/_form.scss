@@ -13,7 +13,7 @@
     align-content: center;
     align-items: center;
     border:$teal solid;
-    background-color: $vibrantgrey;
+    background-color: #e0b9b956;
     margin-bottom: 20px;
   }
   .form-img-prev {
@@ -51,8 +51,7 @@
   .title {
     text-align: center;
     color: red;
-    text-decoration: blanchedalmond;
-    background-color: white;
+    
     border-radius: 10px;
     font-family: Arial, Helvetica, sans-serif;
   }
@@ -63,14 +62,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background-color:black;
+    background-color:transparent;
   }
-  #form-button {
-    width: 50%;
-    text-align: center;
-    border-radius: 30px;
-    font-size: 20px;
-    color: red;
-    background-color: white;
-  }
+
   

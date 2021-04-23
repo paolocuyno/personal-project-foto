@@ -1,7 +1,7 @@
 import React from 'react';
 import Twilio from '../Twilio/Twilio'
 import axios from 'axios';
-import styled from 'styled-components'
+
 
 class Contact extends React.Component {
   constructor() {
@@ -34,9 +34,9 @@ class Contact extends React.Component {
   }
 
   render() {
-    const { name, email, message, title,image } = this.state
+    const { name, email, message, title } = this.state
     return (
-      <body>
+      <body className='contact-body'>
         <div style={styles.form}>
           <h3 style={styles.header}>Email Sender</h3>
           <input style={styles.input} placeholder='Subject' type="text" name='title' value={title} onChange={this.handleInput} />
@@ -44,7 +44,7 @@ class Contact extends React.Component {
           <input style={styles.input} placeholder='email' type="text" name='email' value={email} onChange={this.handleInput} />
           <input style={styles.input} placeholder='message' type="text" name='message' value={message} onChange={this.handleInput} />
         
-          <button style={styles.button} onClick={this.handleSend}>Send</button>
+          <button onClick={this.handleSend}>Send</button>
         </div>
         <Twilio/>
       </body>
@@ -91,15 +91,17 @@ const styles = {
     width:450,
     height:40,
     fontSize:35,
-    outline:'none'
+    outline:'none',
+    borderRadius:'2rem'
   },
   button:{
     width:200,
     height:45,
-    borderRadius:10,
-    background:'teal',
+    borderRadius:'2rem',
+    background:'#ca1f1f79',
     fontSize:35,
     fontWeight:'bold',
     letterSpacing:'0.07em'
+    
   }
 }

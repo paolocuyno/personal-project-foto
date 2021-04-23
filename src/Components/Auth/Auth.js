@@ -92,11 +92,11 @@ const login=()=>{
           />
         </div>
         <div className="auth-button-container">
-          <div className="register" onClick={register}>
+          <button  onClick={register}>
             {" "}
             Register{" "}
-          </div>
-          <button className="dark-button" onClick={login}>
+          </button>
+          <button  onClick={login}>
             {" "}
             Login{" "}
           </button>

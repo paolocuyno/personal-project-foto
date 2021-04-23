@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import noImage from './../../assets/no_image.jpg';
-import './Post.css';
+
 
 class Post extends Component {
   constructor(props) {
@@ -35,10 +35,10 @@ class Post extends Component {
           ?
           <div>
             <div className='post-header'>
-              <h2 className='title'>{this.state.title}</h2>
+              <h2 className='title'>{this.state.title}</h2><br></br>
               <div className='author-box'>
-                <p>post by @{this.state.author}</p>
-                <img src={this.state.author_pic} alt='author' />
+                <br></br><br></br><p> post by @{this.state.author}</p>
+                
               </div>
             </div>
             <div className='post-content-box'>

@@ -29,7 +29,7 @@ export default function Twilio() {
           placeholder='Number'
           ></input>
         <button 
-          style={styles.button} 
+         
           onClick={() => send()}>Send</button>
       </div>
     </div>
@@ -62,7 +62,8 @@ const styles = {
     width:450,
     height:40,
     fontSize:35,
-    outline:'none'
+    outline:'none',
+    borderRadius:'2rem'
   },
 
   message: {
