@@ -46,7 +46,7 @@ const register=()=>{
 }
 
 const login=()=>{
-    let userID={
+   let userID={
         username:username,
         password:password,
     }
@@ -57,7 +57,7 @@ const login=()=>{
         
         history.push({pathname:"/dash"});
     })
-    .catch((err)=>{
+    .catch((err)=>{ 
         console.log(err);
         setErrorMsg('Incorrect username or password')
     })
